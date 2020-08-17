@@ -8,5 +8,9 @@ def home(request):
 def add(request):
     val1 = request.POST['num1']
     val2 = request.POST['num2']
-    res = val1 + val2
-    return render(request,'result.html', {'result': res})
+    if(val1 == "arminv1001"):
+        if(val2 == "123456"):
+            res = "true"
+            return render(request,'result.html')
+
+    return render(request,'home.html',{'name': ', Passwort oder Benutzername war falsch!'})
