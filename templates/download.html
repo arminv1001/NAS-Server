@@ -1,0 +1,16 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+    <h1 align="center">Download Liste</h1>
+<div class = "container">
+    {% for element in inhalt %}
+    <form action="liste" method="post">
+        <div class = "i-am-centered">
+            <div class="row">
+                <button type="button" class = "btn btn-secondary" name = "liste"><a href="media/{{ element }}"> {{element}}</a></button>
+            </div>
+        </div>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}
