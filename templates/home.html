@@ -1,12 +1,19 @@
 {%  extends 'base.html' %}
 
 {% block content %}
-<h1> Hallo {{name}}</h1>
+<h1 align="center"> Hallo {{name}}</h1>
 <form action = "login" method="post">
     {% csrf_token %}
-    BenutzerID : <input type="text" name ="num1"><br>
-    Passwort   : <input type="password" name ="num2"><br>
-    <input type="submit">
-
+    <div class="form-group">
+            <label for="exampleFormControlInput1">Benutzername</label>
+            <input type="text" class="form-control" id ="exampleFormControlInput1" placeholder="Benutzername" aria-label="Username" aria-describedby="basic-addon1" name ="num1">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="num2">
+    </div>
+    <div class="button_home">
+        <button type="submit" class = "btn btn-primary">Submit</button>
+    </div>
 </form>
 {% endblock %}

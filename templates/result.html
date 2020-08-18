@@ -1,14 +1,33 @@
 {%  extends 'base.html' %}
 
 {% block content %}
-Herzlich Willkommen Armin
+    <h1 align="center"> Herzlich Willkommen Armin </h1>
+
 <form action = "upload" method="post" enctype="multipart/form-data">
+    <div class="input-group mb-3">
+        <div class="mleft">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile02" name="document">
+            <label class="custom-file-label" for="inputGroupFile02">
+                {% if url %}
+                    File wurde hochgeladen
+                {% else %}
+                    Choose file
+                {% endif %}
+
+            </label>
+          </div>
+          <div class="input-group-append mt-3">
+            <button type="submit" class="btn btn-secondary">Upload</button>
+          </div>
+        </div>
+    </div>
     {% csrf_token %}
-    <input type="file" name="document">
-    <button type="submit">Upload</button>
+
+
 </form>
     {% if url %}
-        <p>Uploaded File: <a href = "{{ url }}">{{ url }}</a></p>
+        <p>Pfad: <a href = "{{ url }}">{{ url }}</a></p>
     {% endif %}
 
 {% endblock %}
