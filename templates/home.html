@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1> Hallo {{name}}</h1>
-<form action = "add" method="post">
+<form action = "login" method="post">
     {% csrf_token %}
     BenutzerID : <input type="text" name ="num1"><br>
     Passwort   : <input type="password" name ="num2"><br>
